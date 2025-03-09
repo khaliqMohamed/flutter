@@ -1,0 +1,447 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.orange,
+            title: Text(
+              "SwiggyHome",
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+          body: ListView(
+            children: [
+              Container(
+                height: 80,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
+                
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold,height: 1.5),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 80,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                          spreadRadius: 3,
+                          blurRadius: 6,
+                          offset: Offset(0, 5),
+                          color: Color.fromARGB(96, 0, 0, 0))
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Chicken Noodles",
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    Text("Spicy with Hot chillies"),
+                    Text(
+                      "20.08 ED",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ))));
+}
