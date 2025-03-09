@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(StateApp());
+}
+
+class MainApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+        home: Scaffold(
+      appBar: AppBar(
+        title: Text("Purchase the product"),
+      ),
+    ));
+  }
+}
+
+class StateApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return statechange();
+  }
+}
+
+class statechange extends State<StateApp> {
+  String displaytext = "click to purchase";
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+          body: Column(
+        children: [
+         Text(displaytext),
+          MaterialButton(
+            onPressed: () {
+              setState(() {
+                displaytext = "purchased";
+              });
+            },
+            child: Text("click"),
+          )
+          
+        ],
+      )),
+    );
+  }
+}
