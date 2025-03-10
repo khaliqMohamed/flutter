@@ -44,19 +44,49 @@ class _MainAppState extends State<MainApp> {
                 child: Text("ADD"),
                 onPressed: (){
                   setState(() {
-                       taskList.add(textctrl.text);               
+                       taskList.add(textctrl.text);    
+                       textctrl.clear();         
                     });
                 },
               ),
                 ],
               ),
-              Row(
-                children: [
-                  ListView.builder(context,index){
-                    
-                  }
-                ],
-              )
+             
+                Flexible(
+                  child: ListView.builder(
+                    itemCount: taskList.length,
+                    itemBuilder: (context,index){
+                      return Row(
+                        children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(15),
+                        child: Text(taskList[index]),
+                      ),
+                    ),
+                    // MaterialButton(
+                    //   child:Icon(Icons.edit),
+                    //   onPressed: (){
+                    //     setState(() {
+                    //         taskList.replaceRange(index);
+                    //       });
+                    //   },
+                    // ),
+                    MaterialButton(
+                      child: Icon(Icons.delete,color:Colors.red),
+                      onPressed: (){
+                        setState(() {
+                            taskList.removeAt(index);
+                          });
+                      },
+                    )
+                  ],
+                      );
+                    },
+                  ),
+                )
+              
+              
             ],
           ),
         ),
