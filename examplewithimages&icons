@@ -1,0 +1,102 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MainApp());
+}
+
+class MainApp extends StatefulWidget {
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  double? screenSize;
+
+  String? pricevalues;
+
+  @override
+  Widget build(BuildContext context) {
+    screenSize = MediaQuery.of(context).size.width / 3;
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.limeAccent,
+        appBar: AppBar(
+          title: Text("Categories"),
+          actions: [Icon(Icons.shopping_cart_checkout_sharp)],
+        ),
+        body: ListView(children: [
+          Column(
+            children: [
+              //IconButton(onPressed: (){}), Icons.shopping_cart_checkout_sharp)
+              // Image.network(
+              //   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAoAMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAAAwUGBwEECAL/xAA6EAABAwMCAwUGAwcFAQAAAAABAgMEAAURBiESMVEHE0FhgRQiQlJxoTKR0RUjM2JyscEIFkOywuH/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAwQBAgUG/8QAKBEBAAEEAQMDAwUAAAAAAAAAAAECAwQRBRIhMRNBYTJRcRQiI5Gx/9oADAMBAAIRAxEAPwC8aKKKAooooCsE4GazVadr/aIdKxBbLSsKvElBPFsRGR8xHzHw+hJ8AQctedo8HTDibdDaNwvTuEtRGvhJ5cZ8Ppz/AL0wQdM3PUim5/aBNVJJIW3amFlEdrpxAfiPr6moz2WWBMdk6iueXp8slbKnNylJzle/xK69PrVi+1k8s0DzDMaDHTHhMtR2U8m2kBKR6ClvbPMVH/bNs52o9r86CQe2edeHX23mlNPJQ40oYUhYBSR5g0xe2edHtnnQacrT8i1rXN0XN/ZsjPEqC4SqG+ehR8BPVOKdNIa7jXuWu0XOOq2X5jZyG6dl7Zy2fiGN+ta/tnn96iXaHYxe7emfBKmrtA/ex3kHClYOeHPpkHwP1oLmScjNZqtuyHtC/wB1QjbLqsJvEVAKlbJ9oR8wHzDbiHqOeBZNAUUUUBRRRQFFFFAUUUUDTqi9R9PWKbdZRHBGaKgn51fCkfU4Fckvy5OpdSmTOWVyJ8kFw56nkPIDYVcP+o+9Lbj2uyMrwl4qkPjqBgIH5lR9BVFsOuR30OtLKHEHKVDmDQXHctUMxAYkF9qOzHAbXJXuE424UJ+IjryHnXi0Jdvp7yFZbxdQRvIfdUhtX0HEE+oFRbs702q/S/bZySuHFICG1Z4VK/QfeuibTKWzHQ0tptDaBhIbTwgelBVFyhTLOkvO2q72v3cB5l0utp+qcqT9qzaNUpkPIjS3Wllf8KQ1sh3yx8KvLkfCrpcKXGzkhSFDcHcetUN2w6ORZVm92VJZivLAksJzhC/BY6b4oJZ7YM44q1JV/gRF8Emaw2v5CscX5DeqzGrZ1wQxFDT63CnC24/4nleJyNwPp+dS3T9l1M8AmG1a7ZncJXurPmdt/WgfGtS211QSmeyCeQWrhz+dbwmAgEKBHPbxpnu+ntdw461LRBuLYGVIQMHHkDmoGnU71slKbXDcirQcOxVbJP0Hwn6YB+9BoXaU/pfXTs22qLbseQH2j4e9uR9NyK6o01eo+obFCusT+HJaC+HxQrxSfMHIrknVk9m53dUqOctqbRgnny8auD/The3HYdzsjqspYUmQwD4BWQsfmEn1NBdVFFFAUUUUBRRRQFYOfCs1g0HMXbzLMntDks52jMNNY+qeL/1Vdipn2yrDnaXe1A5wttP5NIH+KhdB0R2aW5EbS8AJTgrZS4rzKt/81OknAA8KiXZ6+l/TVsUCN4rY26hOP8VKicHegVMxuG068+4EMISVrUfhA3zUJl3+FrPSchxnu/ZZQWyUKP7xpY/DxDl05csjmN6e9VMuS9N3NhnPG5GWBjny3rnO1InRbxFhh15DSZKXSkEhJA3KunIUE77L7XCaSsZQ9cyyJDrYUAtDR5AAkZ8CfqPKrcgxo646HGiFIWkKSRyIrm2c/cIcpF0trrrXeshJW0fwgjl5DlV/6FTIZ0faUTVKL4jp4+LmM7jPpigkrCylPAT7vh5VW/a9peNc7Y7cI7SUzY6SviAwVjxFT8ucO+dqi+r7i01bZSnD7qWlFX0AoOazVj9gcwxu0FlnJxKjut4HUDi/8mq4NTbsXcDXaVZieSlOp/NpYoOrKKKKAooooCiiigK8rUEJKlHAAyTXqoN2wana07o6U2lzE24IVGjpBwrcYUofQHn1xQc16ruIu2prpcE4KZMpxxODn3So4+1NQoNYoLe7HNRo7hVokKw40eJnPxJPMelW6HEuNg53rnLQWkrtfJiZsRbkSLHWOKWOeflT1P261caZc+DhCh36B4q2NA/PzAHCy3u78ucY9aaFaCgTUvKcKWO/BSrucnhB58O+3pXu1vtXRK0pT3cxKivgPxg05Rn3GDhBII5przGZyl+xd6bkap+F6mxRNG6fJrgdmcC3NJRGUmShJ91uSnOB0z4jPgadHlOwfdltqa6HPun6GnmJPDgwfdWPCm3VE5uRENvSAt1ZBP8AKK6GLmRdiJone/ZBVRrzBqn3qFHaK35KEJAzuqqd7QNaIuwVAtm0bP7x35/IeVWTM0hCukYx5jIWk/hOMKSeoNVLrfRNw0q8lS8vQHThqQE43+VXQ/3rroETp30jchaNUWq4KICI8ptaiTj3eIZ+2aaSMUDnQdwIUFAKScgjIPWvVQjsh1Q1qTSEUKc4psFCY0kE5USkYSo/UDOeuamwORQZooooCiime/X6PakpbAL8xYy3HbO5HzKPJKfM+mTtQbF5u0azw1SJRJyeFttAyp1XglI6/wBuZrmztev713uzKH3ApxAK1IScpazslCfpvk+JJPQVI9eaxU06466+H5y0lKeE4Q0n5UDwHU8z9hUUqQ5KfW+8oqWs5JNAkakugdJyNX39qC0VIjo9+U8P+Nv9TyFRrGa6b7ItNI07pdK3UBM2bwuSDjflsnPkD+eaCTQ7REttvZgwGEtRmEBCEJHIefU+dakq2pWD7vrT74V4UkGggNzt7sV1MmKS262cpUNsGnW3zE3mMXG8NzWv4zXLPmKfZkQOpO1RCdaHWX++jKU2vqk4zVLNwqMqjpmO6W1dmiSlwuSoZHCD3ucIRjfNL2KG68e+kErcWcqJrSgWd12R30lSnF/MrepnBjBlAAxUXHcdTh0fMtr971J+GWYiQB7tYuNoh3W3P2+ewl2K+goWkj7joR4Gt3lWciukgcn690nJ0jfnYD5UuOv34zx/5G/PzHI1G/GuoO1vTTeo9JvrQ2FToKVPxlAb7fiT9CBy6gVy+edBYPZFf3bPdXm2FgOLAUhCj7ro+JB+uxB8CM9QekbPdo13hiREUSAeFxCtlNL8UqHXf/I2rjKLIcivofZVwrQcg1bmgtZKddbcafDM5CQhYVngdT8qx4joeY/MEOgaKZ7Dfo93SUcKmJbYy7HWdx5pPJSfMfQ4O1PFAy6jvf7MZSzGSlyc8D3SFfhQBzWr+Ufc4HmKU1rrBq2JdixHlSZ7x4nnl/iWrHNRHh4ADYDlS+s9XyH5MlMBBeuMtakhKR/DbSSEpPQAeHzE0lo3shn3VxM/UK1NoWeIhXNX+T/b60FW93Ou0pa0NuyHVHcpBOP0rSUkpJB5g4rsO1aSstni91DgtHhTgLWkKP6D0rkOegtTZDZ5odUn8iaB77P7V+2NVwI6kktNr793+lG+PU4HrXU8LCIrQ/lzVC9h8QKlXWaobttobScfMST/ANR+dXw2cISOiQKDZ4qOKkOKjioFVEEUg4whR3Ar1xUcVB4bYQg7AVsJwOVJcVHFQL8VHFSHFRxUCrmFtqScEKSQR1rlPX1p/Y2q7hFSnDS1981/Srf7bj0rqfi5VQ3brFSi5W6YkbuodbUcfKQR/wBqCsEJK1BKRkk4Arb7ubapKVrbdYcSduJOAf1pO2tl64RWwMlbyE465Irru76Rsl4ilqXBaBUndSAEnPXofWgpnRWsG7l3UaU6qPOZPEy8n8SD1ST4dQdj41denL0LmwW5CUNzmgO9Qg+6oHktP8pwfocjwqldZdkM+0uKn6eWpxCDxAJ5p/yPuPpSuitXPsTIqZ6O5uMZxKClQ3dbUQFAdQdj9Uiguxuw2lq5OXJu2xEzXPxyAyONXrTkKzRQFce9oFvNs1peoqgfdlrUM9FHiH2IrsKqH7dtJLkagYusMfvJbHCRyC1t+H1KSMf0mgR7E0hOnp7niZePyQn9at1K/dH0qo+xoFuxT2VpKXETTxJUMEe4n9KtRtzLaT1AoNnjo46Q4qOKgX46OOkOKjioF+OjjpDio4qBfjo46Q4qOKgX46qPtyAVZ4jnSaQPVKv0q1eOqp7aSXbLAabQpTjk3KUpGSfdVsB6igrvs7gG564ssUAniloWcdE+8fsk12AKorsI0m5Gv0m6yx+8isBGPBC3PD+oJG/9Qq9hQBptcsNpcuSLku2RFTUDCJBaHGn1pyooCiiigKYtZ2U3yxPR2eES2yHopUcAOp5Anod0nyJp9pN1aEIK3FJQlO5Uo4ArEzoVJpYtj2haWu6W7guJIwoLTlJB8xy9KlUd4dyN9xtTVe47H+41TbMvvEyUn2poJOC4OS0bbkjYjyBG+cqIhXbhPDEdxz3TVSrPsROonf47/wCJYs1yde+HUVkOg+IpgeXNYP71BR/UCKSFxeR+IGtaORxqp6erU/JNi5Eb0kveDrWeOmNi5pXgE71vofCh+KrsTE94RNzjoLmK03JCUcyKb5F1SkkBQrMzEeZD2XgOZFY74dRUbNxfc/CPzr0l6Uo1Qucni0Tqak0WLkxvSQreAQo9BUR1QUZjuFrvXWuItpG6lKVgAJ8ydvWnhEW6Ot+7GdKT48BFe7NASxqBM+/hTSI4HsiFIVwhe4K1HlkA4A8Mk9MSUZ1mv31+YmGtVqqEp0bZTY7EzGe4DKcy7KUjcF1W6sHoNgPICnyk23EOJCm1BSVbhSTkGvY5Vaido2aKKKyCsGs1g0CEyU3EjOPvHCEDJ6moc8/JvssB1XAznKUDkkdfM06azdUGYrIOErcKleeB/wDaarU4lpzJPMYrzHLZkzkU2N6pjyu2LerfX7n+KzHht8DDaU9VeJ9a9qkee9NypG9JqkedS0ZlNEdNPaEc0TM928+4h5BQ6kLSeYUM1GbvBQw4FtjLS+Q6HpTmqTWhcnwtoIzvnNVc29bvW5mfKS3E0z2R+QyUnKNjRFuJQShexFbL3I0yS8h4FNS8Nl19fpVd4ltkW4mnqOEu4qcIQjmazGYyMq3NN0EZdUpfPkKe2cYrHM5dc3JtR2iGce3EUdXvLYYY4lpQkZUo4FSi3x2IaAEpBcI95Z8ajcRwNvoX0NPSZHnVLj67dG66vJd3PY9pkedei8lSSlWCk8wRmmdMjzpRMjzrqfr0Hp6EkrtCvaoG7BI72P8ACfMdKkcSQ3KjofZVxIWMiovPkpMNxJ+IYrZ0Y6ox5LPwocBHlkcvtW2BmbyPRjxMf1LNy3/H1T5SWisCs131UVhWwJ8qKKSIbql1byQVqPuK90dKY23FBOQeVFFeS56mPXiXRw53QXTJdKRlVYU85jPFRRXKpmdLExBJchzhPvVpuPLXupW9FFZmezNMNdxauta6Yzb4K3Ac5xsaKK7HD0x6u1fL+iGDHbjgraBBJ33rZbWrA3oopzVMRf7fYxJ/YXQtXWtpl9zlxbUUVxY7SsVQ2A+4PipRL7nPiooraZnTXUNd59xeSpXKnvSq1tIyhRHeKyoeBoorqcFG8iZn7K+V9CYjwrNFFetjw57/2Q==",
+              //   width: 50,
+              //   height: 50,
+              //   loadingBuilder: (context, child, loadingProgress) {
+              //     return CircularProgressIndicator();
+              //   },
+              // ),
+              Row(
+                children: [
+                  CategoryList("North India"),
+                  CategoryList("South India"),
+                ],
+              ),
+              Row(
+                children: [
+                  CategoryList("Continental"),
+                  CategoryList("Spl.Continental"),
+                ],
+              ),
+              Row(
+                children: [
+                  CategoryList("North India"),
+                  CategoryList("South India"),
+                ],
+              ),
+              Row(
+                children: [
+                  CategoryList("North India"),
+                  CategoryList("South India"),
+                ],
+              ),
+            ],
+          ),
+        ]),
+      ),
+    );
+  }
+
+  Widget CategoryList(String placesName) {
+    return InkWell(
+      onTap: () {
+        if (placesName == "North India") {
+          setState(() {
+            //pricevalues = placesName;
+            pricevalues = 'From 10.D';
+          });
+        }
+      },
+      child: Row(
+        children: [
+          Container(
+            height: screenSize,
+            width: screenSize,
+            margin: EdgeInsets.all(30),
+            decoration: BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.circular(20)),
+            child: Text(
+              placesName,
+              style: TextStyle(
+                fontSize: 20,
+              ),
+              overflow: TextOverflow.visible,
+            ),
+            alignment: Alignment.center,
+          ),
+        ],
+      ),
+    );
+  }
+}
