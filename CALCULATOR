@@ -12,75 +12,119 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   double? size;
   String inputValue = "";
+  String CalculatedValue = "";
+  String Operator = "";
 
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size.width / 5;
     return MaterialApp(
-        home: Scaffold(
-      backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          Container(
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        body: Column(
+          children: [
+            Container(
               alignment: Alignment.bottomRight,
-              child: Text(inputValue,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold))),
-          Column(
-            children: [
-              Row(
-                children: [
-                  Calcbutton("7", Colors.white24),
-                  Calcbutton("8", Colors.white24),
-                  Calcbutton("9", Colors.white24),
-                  Calcbutton("/", Colors.orange)
-                ],
+              child: Text(
+                inputValue,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              Row(
-                children: [
-                  Calcbutton("4", Colors.white24),
-                  Calcbutton("5", Colors.white24),
-                  Calcbutton("6", Colors.white24),
-                  Calcbutton("*", Colors.orange)
-                ],
-              ),
-              Row(
-                children: [
-                  Calcbutton("1", Colors.white24),
-                  Calcbutton("2", Colors.white24),
-                  Calcbutton("3", Colors.white24),
-                  Calcbutton("-", Colors.orange)
-                ],
-              ),
-              Row(
-                children: [
-                  Calcbutton("0", Colors.white24),
-                  Calcbutton(".", Colors.white24),
-                  Calcbutton("=", Colors.white24),
-                  Calcbutton("+", Colors.orange)
-                ],
-              ),
-              Calcbutton("clear", Colors.black12)
-            ],
-          )
-        ],
+            ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Calcbutton("7", Colors.white24),
+                    Calcbutton("8", Colors.white24),
+                    Calcbutton("9", Colors.white24),
+                    Calcbutton("/", Colors.orange),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Calcbutton("4", Colors.white24),
+                    Calcbutton("5", Colors.white24),
+                    Calcbutton("6", Colors.white24),
+                    Calcbutton("*", Colors.orange),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Calcbutton("1", Colors.white24),
+                    Calcbutton("2", Colors.white24),
+                    Calcbutton("3", Colors.white24),
+                    Calcbutton("-", Colors.orange),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Calcbutton("0", Colors.white24),
+                    Calcbutton(".", Colors.white24),
+                    Calcbutton("=", Colors.white24),
+                    Calcbutton("+", Colors.orange),
+                  ],
+                ),
+                Calcbutton("clear", Colors.black12),
+              ],
+            ),
+          ],
+        ),
       ),
-    ));
+    );
   }
 
   Widget Calcbutton(String text, Color bgcolour) {
-    return Container(
-      margin: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: bgcolour,
-        borderRadius: BorderRadius.circular(90),
+    return InkWell(
+      onTap: () {
+        if (text == "clear") {
+          setState(() {
+            inputValue = "";
+            CalculatedValue = "";
+            Operator = "";
+          });
+        } else if (text == "+" || text == "-" || text == "*" || text == "/") {
+          setState(() {
+            CalculatedValue = inputValue;
+            inputValue = "";
+            Operator = text;
+          });
+        } else if (text == "=") {
+          setState(() {
+            double calcValue = double.parse(CalculatedValue);
+            double inpValue = double.parse(inputValue);
+            if (Operator == "+") {
+              inputValue = (calcValue + inpValue).toString();
+            } else if (Operator == "-") {
+              inputValue = (calcValue - inpValue).toString();
+            } else if (Operator == "*") {
+              inputValue = (calcValue * inpValue).toString();
+            } else if (Operator == "/") {
+              inputValue = (calcValue / inpValue).toString();
+            }
+          });
+        } else {
+          setState(() {
+            inputValue += text;
+          });
+        }
+      },
+
+      child: Container(
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: bgcolour,
+          borderRadius: BorderRadius.circular(90),
+        ),
+        height: size,
+        width: size,
+        child: Text(text, style: TextStyle(color: Colors.white, fontSize: 24)),
+        alignment: Alignment.center,
       ),
-      height: size,
-      width: size,
-      child: Text(text, style: TextStyle(color: Colors.white, fontSize: 24)),
-      alignment: Alignment.center,
     );
   }
 }
