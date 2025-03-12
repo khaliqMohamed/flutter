@@ -1,41 +1,86 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(MainApp());
+}
+
+class MainApp extends StatefulWidget {
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  double? screenSize;
+
+  String? PriceValues;
+
+  @override
+  Widget build(BuildContext context) {
+    screenSize = MediaQuery.of(context).size.width / 3;
+    return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("cusions"),
-            backgroundColor: Colors.green,
-          ),
-          body: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+        backgroundColor: Colors.limeAccent,
+        appBar: AppBar(
+          title: Text("Categories"),
+        ),
+        body: ListView(children: [
+          Column(
             children: [
-              Column(
+              Row(
                 children: [
-                  Container(
-                    height: 90,
-                    width: 90,
-                    margin: EdgeInsets.all(40),
-                    padding: EdgeInsets.all(25),
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                            spreadRadius: 2,
-                            blurRadius: 6,
-                            offset: Offset(0, 4),
-                            color: Color.fromARGB(80, 0, 0, 0),
-                          )
-                        ]),
-                    child: Column(
-                      children: [Text("North India")],
-                      
-                    ),
-                  ),
+                  CategoryList("North India"),
+                  CategoryList("South India"),
                 ],
-              )
+              ),
+              Row(
+                children: [
+                  CategoryList("Continental"),
+                  CategoryList("Spl.Continental"),
+                ],
+              ),
+              Row(
+                children: [
+                  CategoryList("North India"),
+                  CategoryList("South India"),
+                ],
+              ),
+              Row(
+                children: [
+                  CategoryList("North India"),
+                  CategoryList("South India"),
+                ],
+              ),
             ],
-          ))));
+          ),
+        ]),
+      ),
+    );
+  }
+
+  Widget CategoryList(String placesName) {
+    return InkWell(
+      onTap: () {
+        if (placesName == "North India") {
+          setState(() {
+            placesName = 'From 10.D';
+          });
+        }
+      },
+      child: Container(
+        height: screenSize,
+        width: screenSize,
+        margin: EdgeInsets.all(30),
+        decoration: BoxDecoration(
+            color: Colors.blueAccent, borderRadius: BorderRadius.circular(20)),
+        child: Text(
+          placesName,
+          style: TextStyle(
+            fontSize: 20,
+          ),
+          overflow: TextOverflow.visible,
+        ),
+        alignment: Alignment.center,
+      ),
+    );
+  }
 }
