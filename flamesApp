@@ -1,0 +1,152 @@
+// Homepage.dart
+
+import 'package:flutter/material.dart';
+
+class Homepage extends StatefulWidget {
+  const Homepage({Key? key}) : super(key: key);
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  String yourName = "";
+  String secondName = "";
+  Map<String, String> data = {
+    "f": "friend",
+    "l": "love",
+    "a": "affection",
+    "m": "marriage",
+    "e": "enemy",
+    "s": "Sister"
+  };
+
+  String getTheRelation(List<String> flames, lengthoftotalcountofvalues) {
+    final findremovingdata = lengthoftotalcountofvalues % flames.length;
+    final local = [...flames];
+    local.removeAt(
+        findremovingdata == 0 ? flames.length - 1 : findremovingdata - 1);
+    if (flames.length == 1) {
+      return flames.join('');
+    } else {
+      return getTheRelation(local, lengthoftotalcountofvalues);
+    }
+  }
+
+  void findMyRelation() {
+    List<String> highestValue =
+        (yourName.length > secondName.length ? yourName : secondName).split('');
+    List<String> lowestValue =
+        (yourName.length < secondName.length ? yourName : secondName).split('');
+    // print(highestValue);
+    // print(lowestValue);
+    final localvar = [...highestValue];
+
+    for (var fetchSingleCharacter in localvar) {
+      if (lowestValue.contains(fetchSingleCharacter)) {
+        highestValue.remove(fetchSingleCharacter);
+        lowestValue.remove(fetchSingleCharacter);
+        // print(highestValue);
+        // print(lowestValue);
+      }
+      List<String> flames = ["f", "l", "a", "m", "e", "s"];
+      final totalcountofvalues = highestValue.length + lowestValue.length;
+      final result = getTheRelation(flames, totalcountofvalues);
+      showDialog(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text("Just for fun..."),
+          content: Text(data[result] ?? ""),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, "cancel"),
+              child: const Text("cancel"),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, "ok"),
+              child: const Text("ok"),
+            )
+          ],
+        ),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            title: const Text(
+              "Flames",
+              style: TextStyle(
+                  color: Colors.white, fontFamily: 'CupertinoSystemText'),
+            ),
+            backgroundColor: Colors.red,
+          ),
+          body: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  style: const TextStyle(
+                      backgroundColor: Colors.transparent, color: Colors.black),
+                  cursorColor: Colors.black,
+                  onChanged: (value) {
+                    yourName = value;
+                  },
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    label: Text("your Name"),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  style: const TextStyle(
+                      backgroundColor: Colors.transparent, color: Colors.black),
+                  cursorColor: Colors.black,
+                  onChanged: (value) {
+                    secondName = value;
+                  },
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    label: Text("second Name"),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: const Icon(Icons.monitor_heart),
+            onPressed: findMyRelation,
+          )),
+    );
+  }
+}
+
+
+// Main.dart
+
+import 'package:flutter/material.dart';
+import 'package:helloworld/homepage.dart';
+
+void main() => runApp(Mainapp());
+
+class Mainapp extends StatefulWidget {
+  const Mainapp({Key? key}) : super(key: key);
+
+  @override
+  State<Mainapp> createState() => _MainappState();
+}
+
+class _MainappState extends State<Mainapp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Homepage(),
+    );
+  }
+}
